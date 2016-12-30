@@ -163,7 +163,7 @@ YUI().use(
             email: true
           },
           fmsolicita_telefono: {
-            required: false,
+            required: true,
             digits: true
           },
           fmsolicita_celular: {
