@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../build/aui-css/css/bootstrap.css">
+    <script src="../../build/aui/aui.js"></script>
+    <style>
+    .example {
+        margin: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1>AlloyUI - Popover</h1>
+    <div class="example">
+        <button class="btn btn-large btn-primary" id="triggerTop">Click here to toggle a top popover</button>
+        <button class="btn btn-large btn-primary" id="triggerBottom">Click here to toggle a bottom popover</button>
+    </div>
+    <script>
+    YUI({ filter:'raw' }).use('aui-popover', 'widget-anim', function(Y) {
+
+        var popoverTop = new Y.Popover({
+            align: {
+                node: triggerTop
+            },
+            bodyContent: 'One fine body…',
+            headerContent: 'Header content',
+            plugins: [Y.Plugin.WidgetAnim],
+            trigger: '#triggerTop'
+        }).render();
+
+        var popoverBottom = new Y.Popover({
+            align: {
+                node: triggerBottom
+            },
+            bodyContent: 'Another fine body…',
+            headerContent: 'Header content',
+            position: 'bottom',
+            trigger: '#triggerBottom'
+        }).render();
+
+    });
+    </script>
+</body>
+</html>
